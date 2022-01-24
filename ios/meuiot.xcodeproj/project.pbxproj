@@ -8,16 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* meuiotTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* meuiotTests.m */; };
+		0F481DAEF88E4F04AE81C002 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 20CAB0577C1A4F129732E9B3 /* Poppins-Medium.ttf */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		16489DC7A69A4AD792226C48 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1D5618147C1A475CAB52E157 /* Poppins-Bold.ttf */; };
+		27C4CB9608574B489BF862C6 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1F87DD6DCC28466989420A83 /* Poppins-SemiBold.ttf */; };
 		6172F2D35A4C3AA820D92908 /* libPods-meuiot.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6423831EA8574132BED9D8CC /* libPods-meuiot.a */; };
 		7EF68E3733C33B6898317E18 /* libPods-meuiot-meuiotTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABFE59519B596E51CEFDCCC0 /* libPods-meuiot-meuiotTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		16489DC7A69A4AD792226C48 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1D5618147C1A475CAB52E157 /* Poppins-Bold.ttf */; };
-		0F481DAEF88E4F04AE81C002 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 20CAB0577C1A4F129732E9B3 /* Poppins-Medium.ttf */; };
 		8395DB27464F471AA7BF5E79 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 99410DC46CD04C4E9DA31B7B /* Poppins-Regular.ttf */; };
-		27C4CB9608574B489BF862C6 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1F87DD6DCC28466989420A83 /* Poppins-SemiBold.ttf */; };
+		AB07E2F8279F233500611989 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = AB07E2F7279F233500611989 /* fonts */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,17 +42,18 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = meuiot/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = meuiot/main.m; sourceTree = "<group>"; };
 		1D0AE47A65C8663E3B452821 /* Pods-meuiot-meuiotTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-meuiot-meuiotTests.release.xcconfig"; path = "Target Support Files/Pods-meuiot-meuiotTests/Pods-meuiot-meuiotTests.release.xcconfig"; sourceTree = "<group>"; };
+		1D5618147C1A475CAB52E157 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Bold.ttf"; path = "../assets/fonts/Poppins-Bold.ttf"; sourceTree = "<group>"; };
+		1F87DD6DCC28466989420A83 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-SemiBold.ttf"; path = "../assets/fonts/Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
+		20CAB0577C1A4F129732E9B3 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Medium.ttf"; path = "../assets/fonts/Poppins-Medium.ttf"; sourceTree = "<group>"; };
 		6423831EA8574132BED9D8CC /* libPods-meuiot.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-meuiot.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C97AB639B58BBB4B15BBE30 /* Pods-meuiot-meuiotTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-meuiot-meuiotTests.debug.xcconfig"; path = "Target Support Files/Pods-meuiot-meuiotTests/Pods-meuiot-meuiotTests.debug.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = meuiot/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		99410DC46CD04C4E9DA31B7B /* Poppins-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Regular.ttf"; path = "../assets/fonts/Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		AB07E2F7279F233500611989 /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fonts; sourceTree = "<group>"; };
 		ABFE59519B596E51CEFDCCC0 /* libPods-meuiot-meuiotTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-meuiot-meuiotTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0A881CF5CF3F2B244570E2A /* Pods-meuiot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-meuiot.debug.xcconfig"; path = "Target Support Files/Pods-meuiot/Pods-meuiot.debug.xcconfig"; sourceTree = "<group>"; };
 		D00AAFFCFCFDA5787532823F /* Pods-meuiot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-meuiot.release.xcconfig"; path = "Target Support Files/Pods-meuiot/Pods-meuiot.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		1D5618147C1A475CAB52E157 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; name = "Poppins-Bold.ttf"; path = "../assets/fonts/Poppins-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		20CAB0577C1A4F129732E9B3 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; name = "Poppins-Medium.ttf"; path = "../assets/fonts/Poppins-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		99410DC46CD04C4E9DA31B7B /* Poppins-Regular.ttf */ = {isa = PBXFileReference; name = "Poppins-Regular.ttf"; path = "../assets/fonts/Poppins-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		1F87DD6DCC28466989420A83 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; name = "Poppins-SemiBold.ttf"; path = "../assets/fonts/Poppins-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				AB07E2F7279F233500611989 /* fonts */,
 				13B07FAE1A68108700A75B9A /* meuiot */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* meuiotTests */,
@@ -146,20 +149,8 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E233CBF5F47BEE60B243DCF8 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				C0A881CF5CF3F2B244570E2A /* Pods-meuiot.debug.xcconfig */,
-				D00AAFFCFCFDA5787532823F /* Pods-meuiot.release.xcconfig */,
-				6C97AB639B58BBB4B15BBE30 /* Pods-meuiot-meuiotTests.debug.xcconfig */,
-				1D0AE47A65C8663E3B452821 /* Pods-meuiot-meuiotTests.release.xcconfig */,
-			);
-			name = Pods;
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		D228E320ED7E4CED917DAA21 /* Resources */ = {
-			isa = "PBXGroup";
+			isa = PBXGroup;
 			children = (
 				1D5618147C1A475CAB52E157 /* Poppins-Bold.ttf */,
 				20CAB0577C1A4F129732E9B3 /* Poppins-Medium.ttf */,
@@ -168,7 +159,17 @@
 			);
 			name = Resources;
 			sourceTree = "<group>";
-			path = "";
+		};
+		E233CBF5F47BEE60B243DCF8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C0A881CF5CF3F2B244570E2A /* Pods-meuiot.debug.xcconfig */,
+				D00AAFFCFCFDA5787532823F /* Pods-meuiot.release.xcconfig */,
+				6C97AB639B58BBB4B15BBE30 /* Pods-meuiot-meuiotTests.debug.xcconfig */,
+				1D0AE47A65C8663E3B452821 /* Pods-meuiot-meuiotTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
@@ -267,6 +268,7 @@
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				16489DC7A69A4AD792226C48 /* Poppins-Bold.ttf in Resources */,
+				AB07E2F8279F233500611989 /* fonts in Resources */,
 				0F481DAEF88E4F04AE81C002 /* Poppins-Medium.ttf in Resources */,
 				8395DB27464F471AA7BF5E79 /* Poppins-Regular.ttf in Resources */,
 				27C4CB9608574B489BF862C6 /* Poppins-SemiBold.ttf in Resources */,

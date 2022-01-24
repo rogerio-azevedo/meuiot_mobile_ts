@@ -17,6 +17,6 @@ export default {
     shape: '#fff',
     title: '#363F5F',
     text: '#969CB2',
-    background: '#969CB2',
+    background: '#ccc',
   },
 }
