@@ -2,11 +2,11 @@ import React from 'react'
 
 import { Container, Title, Icon } from './styles'
 
-export const Pannel: React.FC = () => {
+export const SignUp: React.FC = () => {
   return (
     <Container>
-      <Title>MEU IOT</Title>
-      <Icon name="qrcode" size={60} color="#900" />
+      <Title>SignUp</Title>
+      <Icon name="users" size={60} color="#900" />
     </Container>
   )
 }
