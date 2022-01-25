@@ -3,9 +3,9 @@ import { TouchableOpacity } from 'react-native'
 
 export const Container = styled(TouchableOpacity)`
   width: 100%;
-  height: 60px;
+  height: 50px;
   background: #159957;
-  border-radius: 10px;
+  border-radius: 8px;
   margin-top: 8px;
   justify-content: center;
   align-items: center;

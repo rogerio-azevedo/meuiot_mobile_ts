@@ -10,10 +10,10 @@ interface ContainerProps {
 
 export const Container = styled.View<ContainerProps>`
   width: 100%;
-  height: 60px;
+  height: 50px;
   padding: 0 16px;
   background: rgba(255,255,255, 0.1)
-  border-radius: 10px;
+  border-radius: 8px;
   margin-bottom: 8px;
   border: rgba(255,255,255, 0.4)
 
@@ -24,7 +24,7 @@ export const Container = styled.View<ContainerProps>`
 export const MyInput = styled(TextInput)`
   flex: 1;
   color: #fff;
-  font-size: ${RFValue(15)}px;
+  font-size: ${RFValue(14)}px;
   font-family: 'Poppins-Medium';
 `
 

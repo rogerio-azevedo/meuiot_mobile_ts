@@ -52,6 +52,7 @@ export const SignIn: React.FC = () => {
                 icon="mail"
                 placeholder="Email"
                 returnKeyType="next"
+                placeholderTextColor="rgba(255,255,255,0.5)"
               />
 
               <Input
@@ -60,6 +61,7 @@ export const SignIn: React.FC = () => {
                 placeholder="Senha"
                 secureTextEntry
                 returnKeyType="send"
+                placeholderTextColor="rgba(255,255,255,0.5)"
               />
 
               <Button title="Entrar" onPress={() => {}}>
