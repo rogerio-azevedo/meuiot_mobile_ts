@@ -7,6 +7,7 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome'
 
 import { Pannel } from '../pages/Pannel'
 import { Users } from '../pages/Users'
+import { SignIn } from '../pages/SignIn'
 
 const { Navigator, Screen } = createBottomTabNavigator()
 
@@ -24,8 +25,9 @@ export function AppRoutes() {
           backgroundColor: '#155799',
         },
         tabBarStyle: {
-          height: Platform.OS === 'ios' ? 88 : 60,
-          paddingVertical: Platform.OS === 'ios' ? 15 : 10,
+          height: Platform.OS === 'ios' ? 88 : 80,
+          paddingTop: Platform.OS === 'ios' ? 15 : 15,
+          paddingBottom: Platform.OS === 'ios' ? 25 : 15,
         },
       }}>
       <Screen
@@ -41,6 +43,16 @@ export function AppRoutes() {
       <Screen
         name="Users"
         component={Users}
+        options={{
+          tabBarIcon: ({ size, color }) => (
+            <FontAwesome name="users" size={size} color={color} />
+          ),
+        }}
+      />
+
+      <Screen
+        name="Times"
+        component={SignIn}
         options={{
           tabBarIcon: ({ size, color }) => (
             <FontAwesome name="users" size={size} color={color} />
