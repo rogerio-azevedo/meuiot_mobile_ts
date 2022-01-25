@@ -3,6 +3,7 @@ import { StatusBar } from 'react-native'
 
 import { ThemeProvider } from 'styled-components'
 import { NavigationContainer } from '@react-navigation/native'
+import AppProvider from './hooks'
 
 import { AppRoutes } from './routes/app.routes'
 
@@ -17,7 +18,9 @@ export const App: React.FC = () => {
         backgroundColor="transparent"
       />
       <NavigationContainer>
-        <AppRoutes />
+        <AppProvider>
+          <AppRoutes />
+        </AppProvider>
       </NavigationContainer>
     </ThemeProvider>
   )
