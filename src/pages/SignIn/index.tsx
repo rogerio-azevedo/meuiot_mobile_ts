@@ -2,9 +2,10 @@ import React, { useCallback, useRef } from 'react'
 import * as RN from 'react-native'
 
 import Icon from 'react-native-vector-icons/Feather'
+
 import { useNavigation } from '@react-navigation/native'
 
-// import { useAuth } from '../../hooks/auth'
+import { useAuth } from '../../hooks/auth'
 
 // import getValidationErrors from '../../utils/getValidationErrors'
 
@@ -23,7 +24,7 @@ interface SignInFormData {
 export const SignIn: React.FC = () => {
   const navigation = useNavigation()
 
-  //const { signIn, user } = useAuth()
+  const { signIn, user } = useAuth()
 
   return (
     <>
@@ -68,27 +69,6 @@ export const SignIn: React.FC = () => {
                 Entrar
               </Button>
 
-              {/* <Form style={{ width: '100%' }}>
-                <Input
-                  autoCorrect={false}
-                  autoCapitalize="none"
-                  keyboardType="email-address"
-                  name="email"
-                  icon="mail"
-                  placeholder="Email"
-                  returnKeyType="next"
-                />
-
-                <Input
-                  name="password"
-                  icon="lock"
-                  placeholder="Senha"
-                  secureTextEntry
-                  returnKeyType="send"
-                />
-                <Button>Entrar</Button>
-              </Form> */}
-
               <Styles.ForgotPassword
                 onPress={() => {
                   console.log('forgot')
@@ -102,8 +82,7 @@ export const SignIn: React.FC = () => {
         </RN.KeyboardAvoidingView>
 
         <Styles.CreateAccountButton
-        //onPress={() => navigation.navigate('SignUp')}
-        >
+          onPress={() => navigation.navigate('SignUp')}>
           <Icon name="log-in" size={20} color="#159957" />
           <Styles.CreateAccountButtonText>
             Criar uma conta

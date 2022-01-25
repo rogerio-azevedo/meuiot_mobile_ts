@@ -5,7 +5,7 @@ import { ThemeProvider } from 'styled-components'
 import { NavigationContainer } from '@react-navigation/native'
 import AppProvider from './hooks'
 
-import { AppRoutes } from './routes/app.routes'
+import Routes from './routes'
 
 import theme from './global/styles/theme'
 
@@ -19,7 +19,7 @@ export const App: React.FC = () => {
       />
       <NavigationContainer>
         <AppProvider>
-          <AppRoutes />
+          <Routes />
         </AppProvider>
       </NavigationContainer>
     </ThemeProvider>

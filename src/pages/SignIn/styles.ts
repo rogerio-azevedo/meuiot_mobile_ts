@@ -1,5 +1,5 @@
 import styled from 'styled-components/native'
-import { Platform, Image } from 'react-native'
+import { Image } from 'react-native'
 import { getBottomSpace } from 'react-native-iphone-x-helper'
 
 export const Container = styled.View`
