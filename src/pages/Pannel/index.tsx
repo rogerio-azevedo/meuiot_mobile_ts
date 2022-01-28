@@ -1,15 +1,13 @@
 import React from 'react'
 
 import { useAuth } from '../../hooks/auth'
-import { useRemember } from '../../hooks/remember'
 
 import { Container, Title, Icon } from './styles'
 
 export const Pannel: React.FC = () => {
-  const { signIn, user } = useAuth()
-  const { remember } = useRemember()
+  const { user } = useAuth()
 
-  console.log(remember)
+  console.log(user.name)
 
   return (
     <Container>

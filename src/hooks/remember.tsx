@@ -72,7 +72,7 @@ const useRemember = (): RememberContextData => {
   const remContext = useContext(RememberContext)
 
   if (!remContext) {
-    throw new Error('useAuth must be used within an AuthProvider')
+    throw new Error('useAuth must be used within an RememberProvider')
   }
   return remContext
 }
