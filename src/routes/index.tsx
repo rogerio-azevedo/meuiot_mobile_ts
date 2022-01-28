@@ -7,9 +7,7 @@ import { AppRoutes } from './app.routes'
 import { useAuth } from '../hooks/auth'
 
 const Routes: React.FC = () => {
-  const { loading } = useAuth()
-
-  const user = undefined
+  const { user, loading } = useAuth()
 
   if (loading) {
     return (

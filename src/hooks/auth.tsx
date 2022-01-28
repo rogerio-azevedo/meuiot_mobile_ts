@@ -4,10 +4,9 @@ import React, {
   useState,
   useContext,
   useEffect,
-  ReactNode,
 } from 'react'
 
-//import AsyncStorage from '@react-native-async-storage/async-storage'
+import AsyncStorage from '@react-native-async-storage/async-storage'
 
 import api from '../services/api'
 
@@ -24,6 +23,7 @@ interface AuthState {
 interface SignInCredentials {
   email: string
   password: string
+  isRemember: boolean
 }
 
 interface AuthContextData {
@@ -31,10 +31,6 @@ interface AuthContextData {
   signIn(credentials: SignInCredentials): Promise<void>
   signOut(): void
   loading: boolean
-}
-
-type AuthProviderProps = {
-  children: ReactNode
 }
 
 const AuthContext = createContext<AuthContextData>({} as AuthContextData)
@@ -45,16 +41,25 @@ const AuthProvider: React.FC = ({ children }) => {
 
   useEffect(() => {
     async function loadStorageData(): Promise<void> {
-      // const [token, user] = await AsyncStorage.multiGet([
-      //   '@MeuIOT:token',
-      //   '@MeuIOT:user',
-      // ])
+      const [token, user] = await AsyncStorage.multiGet([
+        '@MeuIOT:token',
+        '@MeuIOT:user',
+      ])
 
-      // if (token[1] && user[1]) {
-      //   setData({ token: token[1], user: JSON.parse(user[1]) })
+      if (token[1] && user[1]) {
+        setData({
+          token: token[1],
+          user: JSON.parse(user[1]),
+        })
 
-      //   api.defaults.headers.authorization = `Bearer ${token[1]}`
-      // }
+        api.interceptors.request.use(config => {
+          config.headers = {
+            authorization: `Bearer ${token[1]}`,
+          }
+
+          return config
+        })
+      }
 
       setLoading(false)
     }
@@ -70,18 +75,24 @@ const AuthProvider: React.FC = ({ children }) => {
 
     const { token, user } = response.data
 
-    // await AsyncStorage.multiSet([
-    //   ['@MeuIOT:token', token],
-    //   ['@MeuIOT:user', JSON.stringify(user)],
-    // ])
+    await AsyncStorage.multiSet([
+      ['@MeuIOT:token', token],
+      ['@MeuIOT:user', JSON.stringify(user)],
+    ])
 
-    // api.defaults.headers.authorization = `Bearer ${token}`
+    api.interceptors.request.use(config => {
+      config.headers = {
+        authorization: `Bearer ${token}`,
+      }
+
+      return config
+    })
 
     setData({ token, user })
   }, [])
 
   const signOut = useCallback(async () => {
-    //await AsyncStorage.multiRemove(['@MeuIOT:token', '@MeuIOT:user'])
+    await AsyncStorage.multiRemove(['@MeuIOT:token', '@MeuIOT:user'])
 
     setData({} as AuthState)
   }, [])
