@@ -5,10 +5,15 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { useTheme } from 'styled-components'
 import FontAwesome from 'react-native-vector-icons/FontAwesome'
 
-import { Pannel } from '../pages/Pannel'
+import { Panel } from '../pages/Panel'
 import { Users } from '../pages/Users'
 
-const { Navigator, Screen } = createBottomTabNavigator()
+export type RootStackParamList = {
+  Pannel: undefined
+  Users: undefined
+}
+
+const { Navigator, Screen } = createBottomTabNavigator<RootStackParamList>()
 
 export function AppRoutes() {
   const theme = useTheme()
@@ -24,14 +29,14 @@ export function AppRoutes() {
           backgroundColor: '#155799',
         },
         tabBarStyle: {
-          height: Platform.OS === 'ios' ? 88 : 80,
+          height: Platform.OS === 'ios' ? 78 : 75,
           paddingTop: Platform.OS === 'ios' ? 15 : 15,
           paddingBottom: Platform.OS === 'ios' ? 25 : 15,
         },
       }}>
       <Screen
         name="Pannel"
-        component={Pannel}
+        component={Panel}
         options={{
           tabBarIcon: ({ size, color }) => (
             <FontAwesome name="qrcode" size={size} color={color} />

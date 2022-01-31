@@ -6,6 +6,8 @@ import React, {
   useEffect,
 } from 'react'
 
+import { Alert } from 'react-native'
+
 import AsyncStorage from '@react-native-async-storage/async-storage'
 
 import api from '../services/api'
@@ -54,9 +56,46 @@ const AuthProvider: React.FC = ({ children }) => {
           user: parsedUser,
         })
 
+        api.interceptors.response.use(
+          response => {
+            // Do something with response data
+            return response
+          },
+          error => {
+            // Do something with response error
+            // You can even test for a response code
+            // and try a new request before rejecting the promise
+
+            if (
+              error.request._hasError === true &&
+              error.request._response.includes('connect')
+            ) {
+              Alert.alert(
+                'Aviso',
+                'Não foi possível conectar aos nossos servidores, sem conexão a internet',
+                [{ text: 'OK' }],
+                { cancelable: false },
+              )
+            }
+
+            if (error.response.status === 401) {
+              const requestConfig = error.config
+
+              // O token JWT expirou
+              // deleteUser().then(() => {
+              //   navigate('AuthLoading', {})
+              // })
+
+              return api(requestConfig)
+            }
+
+            return Promise.reject(error)
+          },
+        )
+
         api.interceptors.request.use(config => {
           config.headers = {
-            authorization: `Bearer ${token[1]}`,
+            Authorization: `Bearer ${token[1]}`,
           }
 
           return config
@@ -75,6 +114,8 @@ const AuthProvider: React.FC = ({ children }) => {
       password,
     })
 
+    console.log('veio aqui?', response.data)
+
     const { token, user } = response.data
 
     await AsyncStorage.multiSet([
@@ -84,7 +125,7 @@ const AuthProvider: React.FC = ({ children }) => {
 
     api.interceptors.request.use(config => {
       config.headers = {
-        authorization: `Bearer ${token}`,
+        Authorization: `Bearer ${token[1]}`,
       }
 
       return config

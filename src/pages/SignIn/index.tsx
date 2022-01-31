@@ -20,7 +20,6 @@ interface SignInFormData {
 }
 
 export const SignIn: React.FC = () => {
-  const [isEnabled, setIsEnabled] = useState<boolean>(true)
   const { signIn } = useAuth()
   const { setupRemember, remember } = useRemember()
 
@@ -71,104 +70,98 @@ export const SignIn: React.FC = () => {
             keyboardShouldPersistTaps="handled"
             contentContainerStyle={{ flex: 1 }}>
             <Styles.Container>
-              <Styles.FieldsContainer>
-                <Styles.LogoContainer>
-                  <Styles.LogoImage source={logoImg} />
-                </Styles.LogoContainer>
+              <Styles.LogoContainer>
+                <Styles.LogoImage source={logoImg} />
+              </Styles.LogoContainer>
 
-                <RN.View>
-                  <Styles.Title>Faça seu Logon</Styles.Title>
-                </RN.View>
+              <RN.View>
+                <Styles.Title>Faça seu Logon</Styles.Title>
+              </RN.View>
 
-                <Styles.Fields>
-                  <Controller
-                    control={control}
-                    rules={{
-                      required: true,
-                    }}
-                    render={({ field: { onChange, onBlur, value } }) => (
-                      <Input
-                        name="email"
-                        onChangeText={onChange}
-                        value={value}
-                        autoCorrect={false}
-                        onBlur={onBlur}
-                        autoCapitalize="none"
-                        keyboardType="email-address"
-                        icon="mail"
-                        placeholder="Email"
-                        returnKeyType="next"
-                        placeholderTextColor="rgba(255,255,255,0.5)"
-                      />
-                    )}
+              <Controller
+                control={control}
+                rules={{
+                  required: true,
+                }}
+                render={({ field: { onChange, onBlur, value } }) => (
+                  <Input
                     name="email"
+                    onChangeText={onChange}
+                    value={value}
+                    autoCorrect={false}
+                    onBlur={onBlur}
+                    autoCapitalize="none"
+                    keyboardType="email-address"
+                    icon="mail"
+                    placeholder="Email"
+                    returnKeyType="next"
+                    placeholderTextColor="rgba(255,255,255,0.5)"
                   />
-                  {errors.email && <RN.Text>O email é obrigatório.</RN.Text>}
+                )}
+                name="email"
+              />
+              {errors.email && <RN.Text>O email é obrigatório.</RN.Text>}
 
-                  <Controller
-                    control={control}
-                    rules={{
-                      maxLength: 100,
-                    }}
-                    render={({ field: { onChange, onBlur, value } }) => (
-                      <Input
-                        name="password"
-                        onBlur={onBlur}
-                        onChangeText={onChange}
-                        value={value}
-                        icon="lock"
-                        placeholder="Senha"
-                        secureTextEntry
-                        returnKeyType="send"
-                        placeholderTextColor="rgba(255,255,255,0.5)"
-                      />
-                    )}
+              <Controller
+                control={control}
+                rules={{
+                  maxLength: 100,
+                }}
+                render={({ field: { onChange, onBlur, value } }) => (
+                  <Input
                     name="password"
+                    onBlur={onBlur}
+                    onChangeText={onChange}
+                    value={value}
+                    icon="lock"
+                    placeholder="Senha"
+                    secureTextEntry
+                    returnKeyType="send"
+                    placeholderTextColor="rgba(255,255,255,0.5)"
                   />
+                )}
+                name="password"
+              />
 
-                  <Styles.RememberContainer>
-                    <Controller
-                      name="isRemember"
-                      control={control}
-                      rules={{
-                        maxLength: 100,
+              <Styles.RememberContainer>
+                <Controller
+                  name="isRemember"
+                  control={control}
+                  rules={{
+                    maxLength: 100,
+                  }}
+                  render={({ field: { onChange, value } }) => (
+                    <RN.Switch
+                      style={{
+                        transform: [
+                          { scaleX: RN.Platform.OS === 'ios' ? 0.8 : 1.1 },
+                          { scaleY: RN.Platform.OS === 'ios' ? 0.8 : 1.1 },
+                        ],
                       }}
-                      render={({ field: { onChange, value } }) => (
-                        <RN.Switch
-                          style={{
-                            transform: [
-                              { scaleX: RN.Platform.OS === 'ios' ? 0.8 : 1.1 },
-                              { scaleY: RN.Platform.OS === 'ios' ? 0.8 : 1.1 },
-                            ],
-                          }}
-                          trackColor={{ false: '#767577', true: '#155799' }}
-                          thumbColor={'#f4f3f4'}
-                          ios_backgroundColor="#767577"
-                          onValueChange={onChange}
-                          value={value}
-                        />
-                      )}
+                      trackColor={{ false: '#767577', true: '#155799' }}
+                      thumbColor={'#f4f3f4'}
+                      ios_backgroundColor="#767577"
+                      onValueChange={onChange}
+                      value={value}
                     />
+                  )}
+                />
 
-                    <Styles.RememberText>Lembrar meu email</Styles.RememberText>
-                  </Styles.RememberContainer>
-                </Styles.Fields>
+                <Styles.RememberText>Lembrar meu email</Styles.RememberText>
+              </Styles.RememberContainer>
 
-                <Styles.Actions>
-                  <Button title="Entrar" onPress={handleSubmit(onSubmit)}>
-                    Entrar
-                  </Button>
+              <Button title="Entrar" onPress={handleSubmit(onSubmit)}>
+                Entrar
+              </Button>
 
-                  <Styles.ForgotPassword
-                    onPress={() => {
-                      console.log('forgot')
-                    }}>
-                    <Styles.ForgotPasswordText>
-                      Esqueci minha senha
-                    </Styles.ForgotPasswordText>
-                  </Styles.ForgotPassword>
-                </Styles.Actions>
-              </Styles.FieldsContainer>
+              <Styles.ForgotPassword
+                onPress={() => {
+                  console.log('forgot')
+                }}>
+                <Styles.ForgotPasswordText>
+                  Esqueci minha senha
+                </Styles.ForgotPasswordText>
+              </Styles.ForgotPassword>
             </Styles.Container>
           </RN.ScrollView>
         </RN.KeyboardAvoidingView>
