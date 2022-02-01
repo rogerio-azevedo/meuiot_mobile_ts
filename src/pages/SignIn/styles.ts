@@ -1,5 +1,5 @@
 import styled from 'styled-components/native'
-import { Image, Platform } from 'react-native'
+import { Image, Platform, StatusBar } from 'react-native'
 import { RFPercentage } from 'react-native-responsive-fontsize'
 import { getBottomSpace } from 'react-native-iphone-x-helper'
 
@@ -8,7 +8,8 @@ export const Container = styled.View`
   flex: 1;
   align-items: center;
   justify-content: center;
-  padding: 0 30px ${Platform.OS === 'android' ? 150 : 40}px;
+  padding: 0 20px 0;
+  padding-top: ${Platform.OS === 'android' ? StatusBar.currentHeight : 0}px;
 `
 
 export const LogoContainer = styled.View`

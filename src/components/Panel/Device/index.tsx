@@ -40,9 +40,9 @@ export const Device: React.FC = () => {
       .get('painel', {
         params: {
           cliente: 2,
-          typ: swhState.type,
-          dev: swhState.device,
-          ste: swhState.state,
+          //typ: swhState.type,
+          //dev: swhState.device,
+          //ste: swhState.state,
         },
       })
       .then(response => {

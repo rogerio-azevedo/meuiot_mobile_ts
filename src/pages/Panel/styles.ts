@@ -1,9 +1,11 @@
 import styled from 'styled-components/native'
 import { RFPercentage, RFValue } from 'react-native-responsive-fontsize'
+import { StatusBar, Platform } from 'react-native'
 
 export const Container = styled.SafeAreaView`
   display: flex;
   flex: 1;
+  padding-top: ${Platform.OS === 'android' ? StatusBar.currentHeight : 0}px;
 `
 
 export const HeaderContainer = styled.View`

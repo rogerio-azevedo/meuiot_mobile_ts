@@ -12,9 +12,15 @@ import AsyncStorage from '@react-native-async-storage/async-storage'
 
 import api from '../services/api'
 
+interface Customer {
+  id: number
+  name: string
+}
+
 interface User {
   id: number
   name: string
+  customer: Customer
 }
 
 interface AuthState {
@@ -113,8 +119,6 @@ const AuthProvider: React.FC = ({ children }) => {
       email,
       password,
     })
-
-    console.log('veio aqui?', response.data)
 
     const { token, user } = response.data
 

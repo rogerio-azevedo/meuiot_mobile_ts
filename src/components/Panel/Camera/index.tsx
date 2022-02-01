@@ -42,8 +42,11 @@ export const Camera: React.FC = () => {
           scalesPageToFit
           scrollEnabled={false}
           automaticallyAdjustContentInsets
+          mediaPlaybackRequiresUserAction={true}
+          androidLayerType="hardware"
+          mixedContentMode="always"
           startInLoadingState={false}
-          originWhitelist={['*']}
+          originWhitelist={['http://peantonio.ddns.net*']}
           source={{
             uri: item?.url,
           }}

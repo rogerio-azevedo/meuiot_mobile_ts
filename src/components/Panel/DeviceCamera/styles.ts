@@ -4,8 +4,8 @@ import { Dimensions } from 'react-native'
 import { WebView } from 'react-native-webview'
 
 //const { width: screenWidth } = Dimensions.get('window')
-export const screenWidth = Dimensions.get('window').width + 60
-export const ITEM_WIDTH = Math.round(screenWidth * 0.7)
+export const screenWidth = Dimensions.get('window').width
+export const ITEM_WIDTH = Math.round(screenWidth * 1)
 
 export const Container = styled.View`
   display: flex;
@@ -32,6 +32,6 @@ export const CameraContainer = styled.View`
 export const MyWebView = styled(WebView)`
   display: flex;
   border-radius: 4px;
-  width: ${screenWidth * 0.68}px;
+  width: ${screenWidth * 0.98}px;
   background: rgba(255, 255, 255, 0.2);
 `
